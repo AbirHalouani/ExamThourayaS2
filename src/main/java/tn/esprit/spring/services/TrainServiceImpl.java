@@ -15,6 +15,7 @@ import tn.esprit.spring.entities.Voyageur;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import tn.esprit.spring.entities.Voyageur;
 import org.springframework.transaction.annotation.Transactional;
@@ -44,9 +45,15 @@ public class TrainServiceImpl implements ITrainService {
 		// TODO Auto-generated constructor stub
 	}
 
-	public void ajouterTrain(Train t) {
+	public Train ajouterTrain(Train t) {
 
         trainRepository.save(t);
+        return t ;
+    }
+	public List<Train> AllTrain() {
+
+       return ( List<Train> )trainRepository.findAll();
+       
     }
 
     public int TrainPlacesLibres(Ville nomGareDepart) {
@@ -134,12 +141,9 @@ public class TrainServiceImpl implements ITrainService {
     public void TrainsEnGare() {
         List<Voyage> lesvoyages = new ArrayList<>();
         lesvoyages = (List<Voyage>) voyageRepository.findAll();
-        System.out.println("taille" + lesvoyages.size());
-
         Date date = new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        System.out.println("In Schedular After Try");
-        for (int i = 0; i < lesvoyages.size(); i++) {
+       for (int i = 0; i < lesvoyages.size(); i++) {
             if (lesvoyages.get(i).getDateArrivee().before(date)) {
                 System.out.println("les trains sont " + lesvoyages.get(i).getTrain().getCodeTrain());
             }
@@ -147,6 +151,8 @@ public class TrainServiceImpl implements ITrainService {
 
             }
         }
+       
+       
     }
 
 

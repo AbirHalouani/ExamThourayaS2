@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: devops
+Implementation-Version: 1.0
+Built-By: ASUS
+Implementation-Vendor-Id: tn.esprit
+Build-Jdk: 1.8.0_191
+Implementation-URL: https://spring.io/projects/spring-boot/devops
+Created-By: Maven Integration for Eclipse
+

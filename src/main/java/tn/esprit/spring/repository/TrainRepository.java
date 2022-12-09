@@ -1,6 +1,7 @@
 package tn.esprit.spring.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -16,8 +17,8 @@ import tn.esprit.spring.entities.etatTrain;
 
 @Repository
 public interface TrainRepository extends CrudRepository<Train, Long> {
-	 @Query("select * from Train tr where tr.etat=:enGare")
-	void findAllByetat(etatTrain enGare);
+	// @Query("select * from Train tr where tr.etat=:enGare")
+	// Optional<Train> findAllByetat(etatTrain enGare);
 	
 
 	
