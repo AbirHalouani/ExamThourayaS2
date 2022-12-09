@@ -14,18 +14,18 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import tn.esprit.spring.services.*;
-import tn.esprit.spring.entities.Voyage;
-import tn.esprit.spring.repository.VoyageRepository;
+import tn.esprit.spring.entities.Train;
+import tn.esprit.spring.entities.etatTrain;
+import tn.esprit.spring.repository.TrainRepository;
 
-import tn.esprit.spring.services.VoyageServiceImpl;
 //
 
 @ExtendWith(MockitoExtension.class)
 class ExamThourayaS2ApplicationTests {
 //
 	@Mock
-	private VoyageRepository voyageRepository;
-	private VoyageServiceImpl VoyageService;
+	private TrainRepository trainRepository;
+	private TrainServiceImpl trainService;
 	void contextLoads() {
 	}
 	
@@ -34,34 +34,34 @@ class ExamThourayaS2ApplicationTests {
 	
 	@BeforeEach
     void setUp() {
-		VoyageService = new VoyageServiceImpl(voyageRepository);
+		trainService = new TrainServiceImpl(trainRepository);
     }
 
 	@Test
-    void canRetrieveAllFactures() {
+    void canRetrieveAllTrainsEnGare() {
         // when
-		VoyageService.recupererAll();
+		trainService.TrainsEnGare();
         // then
-        verify(voyageRepository).findAll();
+        verify(trainRepository).findAllByetat(etatTrain.en_gare);
     }
 	
 	 @Test
-    void canAddFacture() {
+    void canAddTrain() {
         // given
-		 Voyage v = new Voyage();
+		 Train v = new Train(etatTrain.en_gare,2);
 
         // when
-        VoyageService.ajouterVoyage(v);
+        trainService.ajouterTrain(v);
 
         // then
-        ArgumentCaptor<Voyage> voyageArgumentCaptor =
-                ArgumentCaptor.forClass(Voyage.class);
+        ArgumentCaptor<Train> trainArgumentCaptor =
+                ArgumentCaptor.forClass(Train.class);
         
-        verify(voyageRepository).save(voyageArgumentCaptor.capture());
+        verify(trainRepository).save(trainArgumentCaptor.capture());
 
-        Voyage capturedvoyage = voyageArgumentCaptor.getValue();
+        Train capturedtrain = trainArgumentCaptor.getValue();
 
-        assertThat(capturedvoyage).isEqualTo(v);
+        assertThat(capturedtrain).isEqualTo(v);
         
         
     }

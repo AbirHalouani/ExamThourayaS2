@@ -40,7 +40,11 @@ public class TrainServiceImpl implements ITrainService {
     VoyageRepository voyageRepository;
 
 
-    public void ajouterTrain(Train t) {
+    public TrainServiceImpl(TrainRepository trainRepository2) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public void ajouterTrain(Train t) {
 
         trainRepository.save(t);
     }

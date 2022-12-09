@@ -9,12 +9,15 @@ import org.springframework.stereotype.Repository;
 
 import tn.esprit.spring.entities.Train;
 import tn.esprit.spring.entities.Voyage;
+import tn.esprit.spring.entities.etatTrain;
 
 
 
 
 @Repository
 public interface TrainRepository extends CrudRepository<Train, Long> {
+	 @Query("select * from Train tr where tr.etat=:enGare")
+	void findAllByetat(etatTrain enGare);
 	
 
 	

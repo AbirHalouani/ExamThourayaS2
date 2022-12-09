@@ -66,6 +66,12 @@ public class Train implements Serializable {
         this.etat = etat;
         this.nbPlaceLibre = nbPlaceLibre;
     }
+    public Train(etatTrain etat, int nbPlaceLibre) {
+        super();
+        
+        this.etat = etat;
+        this.nbPlaceLibre = nbPlaceLibre;
+    }
 
 
 }
