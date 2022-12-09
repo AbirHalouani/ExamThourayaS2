@@ -60,37 +60,33 @@ class ExamThourayaS2ApplicationTests {
 
 	Date date = new Date();
 	
-	@BeforeEach
-    void setUp() {
-		trainService = new TrainServiceImpl(trainRepository);
-    }
+		@BeforeEach
+	    void setUp() {
+			trainService = new TrainServiceImpl(trainRepository);
+	    }
 
 	@Test
-    void canRetrieveAllTrainsEnGare() {
+    void getAllTrainsEnGare() {
         // when
+		
 		trainService.TrainsEnGare();
         // then
         verify(trainRepository).findAllByetat(etatTrain.en_gare);
     }
 	
 	 @Test
-    void canAddTrain() {
+    void AddTrain() {
         // given
-		 Train v = new Train(etatTrain.en_gare,2);
+		 Train v = new Train(6,etatTrain.en_gare,2);
 		 
 
         // when
         trainService.ajouterTrain(v);
 
         // then
-        ArgumentCaptor<Train> trainArgumentCaptor =
-                ArgumentCaptor.forClass(Train.class);
+        Optional<Train> actualResult = trainRepository.findById(new Long(6));
+        assertThat(actualResult.isPresent()).isTrue();
         
-        verify(trainRepository).save(trainArgumentCaptor.capture());
-
-        Train capturedtrain = trainArgumentCaptor.getValue();
-
-        assertThat(capturedtrain).isEqualTo(v);
         
         
     }
