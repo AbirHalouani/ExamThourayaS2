@@ -22,6 +22,9 @@ public class VoyageurServiceImpl implements IVoyageurService{
 
 	@Autowired
 	VoyageurRepository voyageurRepository;
+	
+	
+	
 
 //	
 //	private static final Logger l = LogManager.getLogger(voyageurServiceImpl.class);
