@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import io.swagger.annotations.Api;
 import tn.esprit.spring.entities.Voyageur;
 import tn.esprit.spring.entities.Train;
 import tn.esprit.spring.entities.Ville;
@@ -16,6 +17,8 @@ import tn.esprit.spring.services.ITrainService;
 import tn.esprit.spring.services.IVoyageService;
 
 @RestController
+@RequestMapping("/app")
+@CrossOrigin("*")
 public class RestControllerVoyageur {
 
 
