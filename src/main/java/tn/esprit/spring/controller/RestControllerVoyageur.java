@@ -21,7 +21,7 @@ import tn.esprit.spring.services.IVoyageService;
 
 @RestController
 @RequestMapping("/app")
-@CrossOrigin("*")
+//@CrossOrigin("*")
 public class RestControllerVoyageur {
 
 
