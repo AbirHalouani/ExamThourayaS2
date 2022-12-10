@@ -58,7 +58,7 @@ public class TrainServiceImpl implements ITrainService {
 
     public int TrainPlacesLibres(Ville nomGareDepart) {
         int cpt = 0;
-        int occ = 0;
+        int occ = 1;
         List<Voyage> listvoyage = (List<Voyage>) voyageRepository.findAll();
         System.out.println("tailee" + listvoyage.size());
 
@@ -107,7 +107,10 @@ public class TrainServiceImpl implements ITrainService {
 
 
         System.out.println("taille test");
-        Voyageur c = VoyageurRepository.findById(idVoyageur).get();
+        Optional<Voyageur> d = VoyageurRepository.findById(idVoyageur);
+        if ( d.isPresent())
+        {
+        Voyageur c = d.get();
         List<Voyage> lesvoyages = new ArrayList<>();
         lesvoyages = voyageRepository.RechercheVoyage(nomGareDepart, nomGareDepart, heureDepart);
         System.out.println("taille" + lesvoyages.size());
@@ -116,9 +119,9 @@ public class TrainServiceImpl implements ITrainService {
                 lesvoyages.get(i).getMesVoyageurs().add(c);
                 lesvoyages.get(i).getTrain().setNbPlaceLibre(lesvoyages.get(i).getTrain().getNbPlaceLibre() - 1);
             } else
-                System.out.print("Pas de place disponible pour " + VoyageurRepository.findById(idVoyageur).get().getNomVoyageur());
-            voyageRepository.save(lesvoyages.get(i));
-        }
+                voyageRepository.save(lesvoyages.get(i));
+        }}
+        
     }
 
     @Override

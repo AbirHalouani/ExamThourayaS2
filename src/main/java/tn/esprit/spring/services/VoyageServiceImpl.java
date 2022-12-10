@@ -9,6 +9,7 @@ import tn.esprit.spring.repository.TrainRepository;
 import tn.esprit.spring.repository.VoyageRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class VoyageServiceImpl implements IVoyageService {
@@ -30,11 +31,13 @@ public class VoyageServiceImpl implements IVoyageService {
 
 
     public void affecterTrainAVoyage(Long idTrain, Long idVoyage) {
-
-        Train t = trainRepository.findById(idTrain).get();
-        Voyage v = voyageRepository.findById(idVoyage).get();
+       Optional<Train> t1 =  trainRepository.findById(idTrain);
+       Optional<Voyage> v1 =  voyageRepository.findById(idVoyage);
+       if(t1.isPresent() && v1.isPresent())
+        {Train t =t1.get();
+        Voyage v = v1.get();
         v.setTrain(t);
-        voyageRepository.save(v);
+        voyageRepository.save(v);}
     }
 
     @Override
