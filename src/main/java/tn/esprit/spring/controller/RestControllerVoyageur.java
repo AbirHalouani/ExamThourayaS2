@@ -8,9 +8,12 @@ import org.springframework.web.bind.annotation.*;
 
 import io.swagger.annotations.Api;
 import tn.esprit.spring.entities.Voyageur;
+import tn.esprit.spring.entities.Voyageur2;
 import tn.esprit.spring.entities.Train;
+import tn.esprit.spring.entities.Train2;
 import tn.esprit.spring.entities.Ville;
 import tn.esprit.spring.entities.Voyage;
+import tn.esprit.spring.entities.Voyage2;
 import tn.esprit.spring.repository.TrainRepository;
 import tn.esprit.spring.services.IVoyageurService;
 import tn.esprit.spring.services.ITrainService;
@@ -34,23 +37,26 @@ public class RestControllerVoyageur {
     //http://localhost:8083/SpringMVC/servlet/ajouterVoyage
     @PostMapping("/ajouterVoyage")
     @ResponseBody
-    public void ajouterGare(@RequestBody Voyage voiture) {
-        ivoyageservice.ajouterVoyage(voiture);
+    public void ajouterGare(@RequestBody Voyage2 voiture) {
+    	Voyage v=new Voyage(voiture);
+        ivoyageservice.ajouterVoyage(v);
     }
 
 
     ////http://localhost:8083/SpringMVC/servlet/ajouterTrain
     @PostMapping("/ajouterTrain")
     @ResponseBody
-    public void ajouterTrain(@RequestBody Train train) {
-        itrainservice.ajouterTrain(train);
+    public void ajouterTrain(@RequestBody Train2 train) {
+    	Train t = new Train(train);
+        itrainservice.ajouterTrain(t);
     }
 
     ////http://localhost:8083/SpringMVC/servlet/ajouterVoyageur
     @PostMapping("/ajouterVoyageur")
     @ResponseBody
-    public void ajouterVoyageur(@RequestBody Voyageur Voyageur) {
-        iVoyageurservice.ajouterVoyageur(Voyageur);
+    public void ajouterVoyageur(@RequestBody Voyageur2 Voyageur) {
+    	Voyageur v = new Voyageur(Voyageur);
+        iVoyageurservice.ajouterVoyageur(v);
     }
 
     //http://localhost:8083/SpringMVC/servlet/affecterTrainAVoyage/{idtr}/{idvyg}

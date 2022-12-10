@@ -23,38 +23,31 @@ import javax.persistence.TemporalType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
-@Entity
-public class Voyage  implements Serializable {
+
+public class Voyage2  implements Serializable {
 	private static final long serialVersionUID = 1L;
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
 	private Long idVoyage;
 	
 
 	long codeVoyage;
 	
-	@Enumerated(EnumType.STRING)
 	private Ville gareDepart;
 	
 	
-	@Enumerated(EnumType.STRING)
 	private Ville gareArrivee;
 	
-	
-	@Temporal(TemporalType.DATE)
 	private Date dateDepart;
-	@Temporal(TemporalType.DATE)
+	
 	private Date dateArrivee;
 	
 	private double heureDepart;
 	
 	private double heureArrivee;
 	
-	@ManyToOne
 	Train train;
 	
 	
-	@ManyToMany
     public List<Voyageur> mesVoyageurs;
 
 
@@ -158,15 +151,8 @@ public class Voyage  implements Serializable {
 	}
 
 
-	public Voyage() {
+	public Voyage2() {
 		super();
-	}
-
-
-	public Voyage(Voyage2 voiture) {
-		super();
-		
-		// TODO Auto-generated constructor stub
 	}
 	
 	

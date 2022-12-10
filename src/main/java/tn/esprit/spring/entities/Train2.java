@@ -9,11 +9,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
-public class Train implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Train2 implements Serializable {
+
     long idTrain;
 
 
@@ -27,7 +25,7 @@ public class Train implements Serializable {
         this.codeTrain = codeTrain;
     }
 
-    @Enumerated(EnumType.STRING)
+    
     private etatTrain etat;
 
     private int nbPlaceLibre;
@@ -56,27 +54,22 @@ public class Train implements Serializable {
         this.nbPlaceLibre = nbPlaceLibre;
     }
 
-    public Train() {
+    public Train2() {
         super();
     }
 
-    public Train(long idTrain, etatTrain etat, int nbPlaceLibre) {
+    public Train2(long idTrain, etatTrain etat, int nbPlaceLibre) {
         super();
         this.idTrain = idTrain;
         this.etat = etat;
         this.nbPlaceLibre = nbPlaceLibre;
     }
-    public Train(etatTrain etat, int nbPlaceLibre) {
+    public Train2(etatTrain etat, int nbPlaceLibre) {
         super();
         
         this.etat = etat;
         this.nbPlaceLibre = nbPlaceLibre;
     }
-
-	public Train(Train2 train) {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 
 
 }

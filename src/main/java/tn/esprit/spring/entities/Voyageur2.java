@@ -10,12 +10,10 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
-@Entity 
-public class Voyageur implements Serializable{
+public class Voyageur2 implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
 	private Long idVoyageur;
 	
 	String nomVoyageur;
@@ -29,7 +27,6 @@ public class Voyageur implements Serializable{
 		this.mesvoyages = mesvoyages;
 	}
 
-	@ManyToMany(mappedBy = "mesVoyageurs")
     public List<Voyage> mesvoyages;
 
 	public Long getIdVoyageur() {
@@ -48,13 +45,8 @@ public class Voyageur implements Serializable{
 		this.nomVoyageur = nomVoyageur;
 	}
 
-	public Voyageur() {
+	public Voyageur2() {
 		super();
-	}
-
-	public Voyageur(Voyageur2 voyageur) {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	
