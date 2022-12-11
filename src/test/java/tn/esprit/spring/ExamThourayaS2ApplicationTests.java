@@ -67,16 +67,12 @@ class ExamThourayaS2ApplicationTests {
     void getAllTrainsEnGare() throws Exception{
         // when
 		
-		//trainService.TrainsEnGare();
-        // then
 		
 
         Optional<Train> t = Optional.of(mock(Train.class));
 	//	Mockito.when(trainRepository.findAllByetat(etatTrain.en_gare)).thenReturn([new Train(etatTrain.en_gare,3),new Train(etatTrain.en_gare,5)]);
-	//	assertNotNull(trainService.AllTrain());
+	assertNotNull(trainService.AllTrain());
 		
-		//assertNotNull(t);
-       // verify(trainRepository).findAllByetat(etatTrain.en_gare);
     }
 	
 	 @Test
@@ -87,7 +83,7 @@ class ExamThourayaS2ApplicationTests {
 
         // when
 		 Mockito.when(trainRepository.save(v)).thenReturn(v);
-		//Train v2 =trainService.ajouterTrain(v);
+		Train v2 =trainService.ajouterTrain(v);
 		//assertEquals(v,trainService.ajouterTrain(v));
 		//assertTrue(v2 instanceof Train);
 		//trainService.ajouterTrain(v);
