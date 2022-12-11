@@ -30,6 +30,7 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.junit.jupiter.MockitoSettings;
 import org.mockito.quality.Strictness;
+import org.mockito.stubbing.OngoingStubbing;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import org.junit.jupiter.api.Assertions;
@@ -59,18 +60,16 @@ class ExamThourayaS2ApplicationTests {
 	private TrainServiceImpl trainService;
 	
 
-	Date date = new Date();
 	
+	
+	 Train v = new Train(6,etatTrain.en_gare,2);
 		
 
 	@Test
     void getAllTrainsEnGare() throws Exception{
         // when
-		
-		
-
-        Optional<Train> t = Optional.of(mock(Train.class));
-	//	Mockito.when(trainRepository.findAllByetat(etatTrain.en_gare)).thenReturn([new Train(etatTrain.en_gare,3),new Train(etatTrain.en_gare,5)]);
+	Optional<Train> t = Optional.of(mock(Train.class));
+	Mockito.when( trainRepository.findById(Mockito.anyLong())).thenReturn(Optional.of(v));
 	assertNotNull(trainService.AllTrain());
 		
     }
@@ -84,16 +83,8 @@ class ExamThourayaS2ApplicationTests {
         // when
 		 Mockito.when(trainRepository.save(v)).thenReturn(v);
 		Train v2 =trainService.ajouterTrain(v);
-		//assertEquals(v,trainService.ajouterTrain(v));
-		//assertTrue(v2 instanceof Train);
-		//trainService.ajouterTrain(v);
-
-        // then
-        //Optional<Train> actualResult = trainRepository.findById(new Long(6));
-       // assertNotNull(v2);
-       /* assertThat(actualResult.isPresent()).isTrue();*/
-        
-        
+		assertEquals(v,trainService.ajouterTrain(v));
+		
         
     }
 //
