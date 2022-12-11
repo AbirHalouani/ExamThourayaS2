@@ -22,7 +22,7 @@ import tn.esprit.spring.services.IVoyageService;
 
 @RestController
 @RequestMapping("/app")
-@CrossOrigin("*")
+//@CrossOrigin("*")
 public class RestControllerVoyageur {
 
 
@@ -84,6 +84,11 @@ public class RestControllerVoyageur {
     @RequestMapping(value = "/ListerTrainsIndirects/{nomgdpt}/{nomgarr}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Train> ListerTrainsIndirects(@PathVariable("nomgdpt") Ville nomGareDepart, @PathVariable("nomgarr") Ville nomGareArrivee) {
         return itrainservice.ListerTrainsIndirects(nomGareDepart, nomGareArrivee);
+    }
+    
+    @RequestMapping(value = "/ListerTrains", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Train> ListerTrainsIndirects() {
+        return itrainservice.AllTrain();
     }
 
     @PutMapping(value = "/DesaffecterVoyageursTrain/{nomgdpt}/{heuredept}")
