@@ -7,6 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import tn.esprit.spring.entities.Voyageur;
 import tn.esprit.spring.entities.Voyageur2;
 import tn.esprit.spring.entities.Train;
@@ -44,6 +45,7 @@ public class RestControllerVoyageur {
 
 
     ////http://localhost:8083/SpringMVC/servlet/ajouterTrain
+    @ApiOperation(value = "ajouter train")
     @PostMapping("/ajouterTrain")
     @ResponseBody
     public void ajouterTrain(@RequestBody Train2 train) {
