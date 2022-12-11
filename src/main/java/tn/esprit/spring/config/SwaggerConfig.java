@@ -24,7 +24,7 @@ public class SwaggerConfig {
  private ApiInfo apiInfo () {
 	 return new ApiInfoBuilder()
 	 .title("Swagger Configuration for devops")
-	 .description("\"Spring Boot Swagger magasin.stock.configuration\"")
+	 .description("\"Spring Boot Swagger \"")
 	 .version("1.1.0").build();
 	}
 
