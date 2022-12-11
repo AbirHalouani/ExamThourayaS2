@@ -18,6 +18,8 @@ public class Train implements Serializable {
 
 
     long codeTrain;
+    @Enumerated(EnumType.STRING)
+    private etatTrain etat;
 
     public long getCodeTrain() {
         return codeTrain;
@@ -27,8 +29,7 @@ public class Train implements Serializable {
         this.codeTrain = codeTrain;
     }
 
-    @Enumerated(EnumType.STRING)
-    private etatTrain etat;
+   
 
     private int nbPlaceLibre;
 
