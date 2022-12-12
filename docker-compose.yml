@@ -12,7 +12,7 @@ services:
     volumes:
       - mysql-container:/var/lib/mysql:rw
     image: 'mysql:latest'
-  docker_spring:
+  devops:
     depends_on:
       - mysql-container
     container_name: devops
