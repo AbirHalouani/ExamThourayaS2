@@ -12,46 +12,46 @@ import javax.persistence.Id;
 
 public class Train2 implements Serializable {
 
-    long idTrain;
+    long idTrain2;
 
 
-    long codeTrain;
+    long codeTrain2;
 
-    public long getCodeTrain() {
-        return codeTrain;
+    public long getCodeTrain2() {
+        return codeTrain2;
     }
 
-    public void setCodeTrain(long codeTrain) {
-        this.codeTrain = codeTrain;
+    public void setCodeTrain2(long codeTrain) {
+        this.codeTrain2 = codeTrain;
     }
 
     
-    private etatTrain etat;
+    private etatTrain etat2;
 
-    private int nbPlaceLibre;
+    private int nbPlaceLibre2;
 
-    public long getIdTrain() {
-        return idTrain;
+    public long getIdTrain2() {
+        return idTrain2;
     }
 
-    public void setIdTrain(long idTrain) {
-        this.idTrain = idTrain;
+    public void setIdTrain2(long idTrain) {
+        this.idTrain2 = idTrain;
     }
 
-    public etatTrain getEtat() {
-        return etat;
+    public etatTrain getEtat2() {
+        return etat2;
     }
 
-    public void setEtat(etatTrain etat) {
-        this.etat = etat;
+    public void setEtat2(etatTrain etat) {
+        this.etat2 = etat;
     }
 
-    public int getNbPlaceLibre() {
-        return nbPlaceLibre;
+    public int getNbPlaceLibre2() {
+        return nbPlaceLibre2;
     }
 
-    public void setNbPlaceLibre(int nbPlaceLibre) {
-        this.nbPlaceLibre = nbPlaceLibre;
+    public void setNbPlaceLibre2(int nbPlaceLibre) {
+        this.nbPlaceLibre2 = nbPlaceLibre;
     }
 
     public Train2() {
@@ -60,15 +60,15 @@ public class Train2 implements Serializable {
 
     public Train2(long idTrain, etatTrain etat, int nbPlaceLibre) {
         super();
-        this.idTrain = idTrain;
-        this.etat = etat;
-        this.nbPlaceLibre = nbPlaceLibre;
+        this.idTrain2 = idTrain;
+        this.etat2 = etat;
+        this.nbPlaceLibre2 = nbPlaceLibre;
     }
     public Train2(etatTrain etat, int nbPlaceLibre) {
         super();
         
-        this.etat = etat;
-        this.nbPlaceLibre = nbPlaceLibre;
+        this.etat2 = etat;
+        this.nbPlaceLibre2 = nbPlaceLibre;
     }
 
 

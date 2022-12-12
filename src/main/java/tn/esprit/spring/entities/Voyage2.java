@@ -27,127 +27,127 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Voyage2  implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	private Long idVoyage;
+	private Long idVoyage2;
 	
 
-	long codeVoyage;
+	long codeVoyage2;
 	
-	private Ville gareDepart;
-	
-	
-	private Ville gareArrivee;
-	
-	private Date dateDepart;
-	
-	private Date dateArrivee;
-	
-	private double heureDepart;
-	
-	private double heureArrivee;
-	
-	Train train;
+	private Ville gareDepart2;
 	
 	
-    public List<Voyageur> mesVoyageurs;
+	private Ville gareArrivee2;
+	
+	private Date dateDepart2;
+	
+	private Date dateArrivee2;
+	
+	private double heureDepart2;
+	
+	private double heureArrivee2;
+	
+	Train train2;
+	
+	
+    public List<Voyageur> mesVoyageurs2;
 
 
 	public long getCodeVoyage() {
-		return codeVoyage;
+		return codeVoyage2;
 	}
 
 
-	public void setCodeVoyage(long codeVoyage) {
-		this.codeVoyage = codeVoyage;
+	public void setCodeVoyage(long codeVoyage2) {
+		this.codeVoyage2 = codeVoyage2;
 	}
 
 
-	public Long getIdVoyage() {
-		return idVoyage;
+	public Long getidVoyage2() {
+		return idVoyage2;
 	}
 
 
-	public void setIdVoyage(Long idVoyage) {
-		this.idVoyage = idVoyage;
+	public void setidVoyage2(Long idVoyage2) {
+		this.idVoyage2 = idVoyage2;
 	}
 
 
-	public Ville getGareDepart() {
-		return gareDepart;
+	public Ville getgareDepart2() {
+		return gareDepart2;
 	}
 
 
-	public void setGareDepart(Ville gareDepart) {
-		this.gareDepart = gareDepart;
+	public void setgareDepart2(Ville gareDepart2) {
+		this.gareDepart2 = gareDepart2;
 	}
 
 
-	public Ville getGareArrivee() {
-		return gareArrivee;
+	public Ville getgareArrivee2() {
+		return gareArrivee2;
 	}
 
 
-	public void setGareArrivee(Ville gareArrivee) {
-		this.gareArrivee = gareArrivee;
+	public void setgareArrivee2(Ville gareArrivee2) {
+		this.gareArrivee2 = gareArrivee2;
 	}
 
 
-	public Date getDateDepart() {
-		return dateDepart;
+	public Date getdateDepart2() {
+		return dateDepart2;
 	}
 
 
-	public void setDateDepart(Date dateDepart) {
-		this.dateDepart = dateDepart;
+	public void setdateDepart2(Date dateDepart2) {
+		this.dateDepart2 = dateDepart2;
 	}
 
 
-	public Date getDateArrivee() {
-		return dateArrivee;
+	public Date getdateArrivee2() {
+		return dateArrivee2;
 	}
 
 
-	public void setDateArrivee(Date dateArrivee) {
-		this.dateArrivee = dateArrivee;
+	public void setdateArrivee2(Date dateArrivee2) {
+		this.dateArrivee2 = dateArrivee2;
 	}
 
 
-	public double getHeureDepart() {
-		return heureDepart;
+	public double getheureDepart2() {
+		return heureDepart2;
 	}
 
 
-	public void setHeureDepart(double heureDepart) {
-		this.heureDepart = heureDepart;
+	public void setheureDepart2(double heureDepart2) {
+		this.heureDepart2 = heureDepart2;
 	}
 
 
-	public double getHeureArrivee() {
-		return heureArrivee;
+	public double getheureArrivee2() {
+		return heureArrivee2;
 	}
 
 
-	public void setHeureArrivee(double heureArrivee) {
-		this.heureArrivee = heureArrivee;
+	public void setheureArrivee2(double heureArrivee2) {
+		this.heureArrivee2 = heureArrivee2;
 	}
 
 
 	public Train getTrain() {
-		return train;
+		return train2;
 	}
 
 
-	public void setTrain(Train train) {
-		this.train = train;
+	public void setTrain(Train train2) {
+		this.train2 = train2;
 	}
 
 
 	public List<Voyageur> getMesVoyageurs() {
-		return mesVoyageurs;
+		return mesVoyageurs2;
 	}
 
 
-	public void setMesVoyageurs(List<Voyageur> mesVoyageurs) {
-		this.mesVoyageurs = mesVoyageurs;
+	public void setMesVoyageurs(List<Voyageur> mesVoyageurs2) {
+		this.mesVoyageurs2 = mesVoyageurs2;
 	}
 
 

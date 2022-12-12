@@ -14,35 +14,35 @@ public class Voyageur2 implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	private Long idVoyageur;
+	private Long idVoyageur2;
 	
-	String nomVoyageur;
+	String nomVoyageur2;
 
 	
-	public List<Voyage> getMesvoyages() {
-		return mesvoyages;
+	public List<Voyage> getMesvoyages2() {
+		return mesvoyages2;
 	}
 
-	public void setMesvoyages(List<Voyage> mesvoyages) {
-		this.mesvoyages = mesvoyages;
+	public void setMesvoyages2(List<Voyage> mesvoyages2) {
+		this.mesvoyages2 = mesvoyages2;
 	}
 
-    public List<Voyage> mesvoyages;
+    public List<Voyage> mesvoyages2;
 
-	public Long getIdVoyageur() {
-		return idVoyageur;
+	public Long getIdVoyageur2() {
+		return idVoyageur2;
 	}
 
-	public void setIdVoyageur(Long idVoyageur) {
-		this.idVoyageur = idVoyageur;
+	public void setIdVoyageur(Long idVoyageur2) {
+		this.idVoyageur2 = idVoyageur2;
 	}
 
 	public String getNomVoyageur() {
-		return nomVoyageur;
+		return nomVoyageur2;
 	}
 
-	public void setNomVoyageur(String nomVoyageur) {
-		this.nomVoyageur = nomVoyageur;
+	public void setNomVoyageur(String nomVoyageur2) {
+		this.nomVoyageur2 = nomVoyageur2;
 	}
 
 	public Voyageur2() {
