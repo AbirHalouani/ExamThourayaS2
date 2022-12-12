@@ -15,7 +15,7 @@ services:
   docker_spring:
     depends_on:
       - mysql-container
-    container_name: docker_spring
+    container_name: devops
     ports:
       - '8089:8089'
     image: abirhalouani/devops
